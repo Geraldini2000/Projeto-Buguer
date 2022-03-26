@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Banner from '../components/Banner.vue'
-import BurgerForm from '../components/BurgerForm.vue'
+import Banner from '../components/Banner.vue' // Caminho componente de Banner
+import BurgerForm from '../components/BurgerForm.vue' // Caminho componente de Formulario
 
   export default {
     name: 'Home',
