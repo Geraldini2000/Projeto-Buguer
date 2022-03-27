@@ -3,7 +3,7 @@
         <p>Componente de mensagem</p>
 
         <div>
-            <form id="burger-form">
+            <form id="burger-form" @submit="createBurger">
 
             <div class="input-container">
                 <label for="nome">Nome do cliente</label>
@@ -30,6 +30,7 @@
 
             <div id="opcionais-container" class="input-container">
                 <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
+                <!-- Puxando com o v-for os ingredientes do banco e listando no template -->
                 <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
                     <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
                     <span>{{ opcional.tipo }}</span>
@@ -63,7 +64,6 @@ export default {
             pao:null,
             carne: null,
             opcionais:[],
-            status: "Solicitado",
             msg: null
             
         }
@@ -78,6 +78,39 @@ export default {
             this.paes = data.paes;
             this.carnes = data.carnes;
             this.opcionaisdata = data.opcionais;
+        },
+        // method post (enviar form)
+        async createBurger(e) {
+            
+            e.preventDefault();
+
+            const data = {
+                nome: this.nome,
+                pao: this.pao,
+                carne: this.carne,
+                opcionais: Array.from(this.opcionais),
+                status: "Solicitado"
+            }
+        // Chamando o array para texto    
+            const dataJson = JSON.stringify(data);
+        // Enviando para o backend method post (enviar form)
+            const req = await fetch("http://localhost:3000/burgers",{
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: dataJson
+            });
+
+            const res = await req.json();
+
+            console.log(res);
+
+            // Limpar os campos
+
+            this.nome = "";
+            this.carne = "";
+            this.pao = "";
+            this.opcionais = "";
+
         }
     },
     mounted() {
