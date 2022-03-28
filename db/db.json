@@ -104,17 +104,6 @@
       "id": 2
     },
     {
-      "nome": "Hulk",
-      "pao": "Parmesão e Orégano",
-      "carne": "Maminha",
-      "opcionais": [
-        "Cheddar",
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
       "nome": "teste",
       "pao": "3 Queijos",
       "carne": "Alcatra",
