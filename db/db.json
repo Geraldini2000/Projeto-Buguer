@@ -79,18 +79,6 @@
   ],
   "burgers": [
     {
-      "nome": "Hulk",
-      "pao": "Italiano Branco",
-      "carne": "Veggie burger",
-      "opcionais": [
-        "Bacon",
-        "Cheddar",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
       "nome": "Joao Victor",
       "pao": "Integral",
       "carne": "Picanha",
@@ -100,7 +88,7 @@
         "Cebola roxa",
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 2
     },
     {
