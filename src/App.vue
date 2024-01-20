@@ -5,19 +5,14 @@
 </template>
 
 <script>
-// imports components
-import Navbar from './components/Navbar.vue' 
-import Footer from './components/Footer.vue' 
 
   export default {
     components: {
-      Navbar,
-      Footer
+   
     },
     data() {
       return{ 
-      logo_src: "/img/logo.png", // caminho da imagem 
-      app_name: "Make Your Burger"
+     
       }
     }
   }
